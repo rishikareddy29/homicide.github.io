@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>letter</title>
+  <style media="screen">
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: cursive;
+    }
+
+    [class*="col-"] {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 600px) {
+
+      /* For tablets: */
+      .col-s-1 {
+        width: 8.33%;
+      }
+
+      .col-s-2 {
+        width: 16.66%;
+      }
+
+      .col-s-3 {
+        width: 25%;
+      }
+
+      .col-s-4 {
+        width: 33.33%;
+      }
+
+      .col-s-5 {
+        width: 41.66%;
+      }
+
+      .col-s-6 {
+        width: 50%;
+      }
+
+      .col-s-7 {
+        width: 58.33%;
+      }
+
+      .col-s-8 {
+        width: 66.66%;
+      }
+
+      .col-s-9 {
+        width: 75%;
+      }
+
+      .col-s-10 {
+        width: 83.33%;
+      }
+
+      .col-s-11 {
+        width: 91.66%;
+      }
+
+      .col-s-12 {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+
+      /* For desktop: */
+      .col-1 {
+        width: 8.33%;
+      }
+
+      .col-2 {
+        width: 16.66%;
+      }
+
+      .col-3 {
+        width: 25%;
+      }
+
+      .col-4 {
+        width: 33.33%;
+      }
+
+      .col-5 {
+        width: 41.66%;
+      }
+
+      .col-6 {
+        width: 50%;
+      }
+
+      .col-7 {
+        width: 58.33%;
+      }
+
+      .col-8 {
+        width: 66.66%;
+      }
+
+      .col-9 {
+        width: 75%;
+      }
+
+      .col-10 {
+        width: 83.33%;
+      }
+
+      .col-11 {
+        width: 91.66%;
+      }
+
+      .col-12 {
+        width: 100%;
+      }
+    }
+
+    .background::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('letter.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .letter {
+      background-color: white;
+      position: relative;
+      padding: 16px;
+      margin-top: 150px;
+      margin-left: 350px;
+      margin-right: 350px;
+      margin-bottom: 150px;
+    }
+
+    h1 {
+      padding: 30px;
+    }
+
+    p {
+      padding: 30px;
+    }
+
+    .test {
+      height: 50px;
+      width: 100px;
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+    }
+    button{
+      background-color: red;
+      text-align: center;
+      margin-left: 320px;
+      font-size: 30px;
+      padding-left: 5px;
+      padding-right: 5px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      display: inline-block;
+
+    }
+    .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function getRandomArbitrary() {
+      return Math.floor(Math.random() * 3);
+    }
+    function redirectCook(){
+      window.location.replace("suspectsCook.html");
+    }
+    function redirectMaid(){
+      window.location.replace("suspectsMaid.html");
+    }
+    function redirectDaughter(){
+      window.location.replace("suspectsDaughter.html");
+    }
+    x = getRandomArbitrary();
+    function getRandomPage(x){
+      if (x==0){
+        redirectCook();
+      }
+      else if (x==1) {
+        redirectMaid();
+      }
+      else if (x==2){
+        redirectDaughter();
+      }
+    }
+  </script>
+  <div class="background">
+    <div class="letter">
+      <h1>Detective!</h1>
+      <p>This is Rajnath Seth from Parvathi Haveli. My wife was murdered the day before and I was falsely accused for the crime. There are three suspects in the house excluding me. I request you to kindly takeup this case and find the killer.</p>
+      <p>You have <b>three (3) minutes i.e. 180 seconds</b> to catch the murderer before the police executes me to death. I must warn you that the killer is quite intelligent. The killer will escape for good if you make <b>three (3) wrong choices</b>.</p>
+  <!--  <form class="" action="getRandomPage()" method="post">  -->
+        <button class="button" onclick="getRandomPage(x)"><span>Solve</span></button>
+    <!--  </form>  -->
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
