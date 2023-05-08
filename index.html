@@ -136,9 +136,30 @@
   </head>
 
   <body>
+    <script src="store.js"></script>
     <script type="text/javascript">
       function goLetter(){
         window.location.replace("letter.html");
+      }
+
+      function addData(){
+        username = document.getElementById('uname').value;
+        pass = document.getElementById('psw').value;
+
+
+        if (data.dataStore[username]){
+          if (data[username]==pass){
+            goLetter();
+          }
+          else{
+            alert("Wrong Password");
+          }
+        }
+
+      }
+      else{
+        data.dataStore[username]= pass;
+        goLetter();
       }
     </script>
     <div class="background">
@@ -155,11 +176,10 @@
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-            <button type = "submit"> Submit </button>
 
             </form>
 
-            <button class="button" onclick="goLetter()">Start</button>
+            <button class="button" onclick="addData()">Start</button>
         <!--    <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>  -->
